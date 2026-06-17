@@ -138,12 +138,12 @@
     <div class="style-grid">
 
         <div class="style-card">
-            <div class="style-label">Style A — Dropdown · Mandatory</div>
+            <div class="style-label">Style A — Dropdown · Optional</div>
             <label class="field-label" for="dis_a">
-                Disability <span class="req">*</span>
+                Disability <span class="opt">(optional)</span>
             </label>
             <p class="field-note">This helps us find the best matching programs for your needs.</p>
-            <select id="dis_a" class="field-select mandatory" onchange="toggleDisType(this.value)">
+            <select id="dis_a" class="field-select" onchange="toggleDisType(this.value)">
                 <option value="">Select an option</option>
                 <option value="no">No</option>
                 <option value="yes" selected>Yes</option>
@@ -151,9 +151,9 @@
 
             <div id="dis_type_group" style="display:block; margin-top: 14px;">
                 <label class="field-label" for="dis_type">
-                    Type of Disability <span class="req">*</span>
+                    Type of Disability <span class="opt">(optional)</span>
                 </label>
-                <select id="dis_type" class="field-select mandatory">
+                <select id="dis_type" class="field-select">
                     <option value="">Select type</option>
                     <option value="mobility">Mobility / Physical</option>
                     <option value="vision">Vision / Blindness</option>
@@ -168,11 +168,11 @@
         </div>
 
         <div class="style-card">
-            <div class="style-label">Style B — Dropdown · Optional</div>
+            <div class="style-label">Style B — Dropdown · Mandatory</div>
             <label class="field-label" for="dis_b">
-                Do you have any accessibility needs? <span class="opt">(optional)</span>
+                Do you have any accessibility needs? <span class="req">*</span>
             </label>
-            <select id="dis_b" class="field-select" onchange="toggleDisTypeB(this.value)">
+            <select id="dis_b" class="field-select mandatory" onchange="toggleDisTypeB(this.value)">
                 <option value="">Select an option</option>
                 <option value="no">No</option>
                 <option value="yes" selected>Yes</option>
@@ -180,9 +180,9 @@
 
             <div id="dis_type_group_b" style="display:block; margin-top: 14px;">
                 <label class="field-label" for="dis_type_b">
-                    Type of Accessibility Need <span class="opt">(optional)</span>
+                    Type of Accessibility Need <span class="req">*</span>
                 </label>
-                <select id="dis_type_b" class="field-select">
+                <select id="dis_type_b" class="field-select mandatory">
                     <option value="">Select type</option>
                     <option value="mobility">Mobility / Physical</option>
                     <option value="vision">Vision / Blindness</option>
