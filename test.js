@@ -84,3 +84,33 @@ function vote(btn, field) {
 }
 
 loadCounts();
+
+function downloadResults() {
+    const votedBtn = document.querySelector(".vote-btn.voted");
+    const preferredStyle = votedBtn
+        ? votedBtn.closest(".style-card").querySelector(".style-label").textContent.trim()
+        : "No vote recorded";
+
+    const results = {
+        timestamp: new Date().toISOString(),
+        preferred_style: preferredStyle,
+        total_votes: {
+            style_a: parseInt(localStorage.getItem("votes_a") || 0),
+            style_b: parseInt(localStorage.getItem("votes_b") || 0)
+        },
+        disability_field: {
+            style_a_selection: document.getElementById("dis_a")?.value || "",
+            style_a_type: document.getElementById("dis_type")?.value || "",
+            style_b_selection: document.getElementById("dis_b")?.value || "",
+            style_b_type: document.getElementById("dis_type_b")?.value || ""
+        }
+    };
+
+    const blob = new Blob([JSON.stringify(results, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `ab_results_${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+}
