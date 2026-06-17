@@ -120,6 +120,34 @@
         }
         .vote-btn:hover, .vote-btn.voted { background: #0d1b4b; color: white; }
 
+        .card-green {
+            background: #f1f8f1;
+            border: 2px solid #a5d6a7;
+        }
+        .card-green .section-title,
+        .card-green .style-label { color: #2e7d32; }
+        .card-green select.field-select { border-color: #a5d6a7; }
+        .card-green select.field-select.mandatory { border-color: #2e7d32; }
+        .card-green .toggle-btn:hover,
+        .card-green .toggle-btn.active { border-color: #2e7d32; background: #2e7d32; color: white; }
+        .card-green .radio-option:hover,
+        .card-green .radio-option.selected { border-color: #2e7d32; background: #e8f5e9; }
+        .card-green input[type="radio"] { accent-color: #2e7d32; }
+
+        .card-blue {
+            background: #f0f4ff;
+            border: 2px solid #90caf9;
+        }
+        .card-blue .section-title,
+        .card-blue .style-label { color: #1565c0; }
+        .card-blue select.field-select { border-color: #90caf9; }
+        .card-blue select.field-select.mandatory { border-color: #1565c0; }
+        .card-blue .toggle-btn:hover,
+        .card-blue .toggle-btn.active { border-color: #1565c0; background: #1565c0; color: white; }
+        .card-blue .radio-option:hover,
+        .card-blue .radio-option.selected { border-color: #1565c0; background: #e3f2fd; }
+        .card-blue input[type="radio"] { accent-color: #1565c0; }
+
         @media (max-width: 600px) {
             .style-grid { grid-template-columns: 1fr; }
         }
@@ -137,7 +165,7 @@
     <div class="section-title">Disability Field</div>
     <div class="style-grid">
 
-        <div class="style-card">
+        <div class="style-card card-green">
             <div class="style-label">Style A — Dropdown · Optional</div>
             <label class="field-label" for="dis_a">
                 Disability <span class="opt">(optional)</span>
@@ -167,7 +195,7 @@
             <div style="text-align:center; margin-top: 16px; font-weight: bold; color: #2e7d32;">Option A</div>
         </div>
 
-        <div class="style-card">
+        <div class="style-card card-blue">
             <div class="style-label">Style B — Dropdown · Mandatory</div>
             <label class="field-label" for="dis_b">
                 Do you have any accessibility needs? <span class="req">*</span>
